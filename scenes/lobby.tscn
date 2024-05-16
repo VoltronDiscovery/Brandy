@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://crhhl37o4lmel"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v7yo3"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_e3exr"]
+sky_top_color = Color(0.054902, 0.0823529, 0.254902, 1)
+sky_horizon_color = Color(0.0901961, 0.0705882, 0.286275, 1)
+sky_curve = 0.261165
+sky_energy_multiplier = 2.8
+sky_cover_modulate = Color(0.545098, 0.423529, 0.392157, 1)
+sun_angle_max = 21.98
+sun_curve = 0.106066
+
+[sub_resource type="Sky" id="Sky_qiv2v"]
+sky_material = SubResource("ProceduralSkyMaterial_e3exr")
+
+[sub_resource type="Environment" id="Environment_6xope"]
+background_mode = 2
+sky = SubResource("Sky_qiv2v")
+ssr_fade_in = 0.172305
+ssao_radius = 2.18
+fog_light_color = Color(0.568627, 0.556863, 0.796078, 1)
+volumetric_fog_density = 0.0342
+volumetric_fog_albedo = Color(0.462745, 0.545098, 0.937255, 1)
+
+[node name="lobby" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(517.434, 0, 0, 0, 0.303859, 0, 0, 0, 380.758, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_v7yo3")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="StaticBody3D"]
+use_collision = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_6xope")
