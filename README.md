@@ -1,2 +1,2 @@
 # Brandy
- 
+ A horror game
