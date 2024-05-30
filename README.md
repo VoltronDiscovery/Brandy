@@ -4,5 +4,7 @@
 MOVING CONTROLS
 A S W D 
 
+Tools  - Keys, wrench, Axe, and gun
+
 
 
