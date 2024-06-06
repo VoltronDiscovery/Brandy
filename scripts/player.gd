@@ -22,10 +22,10 @@ func _input(event):
 			if Input.mouse_mode == Input.MOUSE_MODE_VISIBLE:
 				Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
-func _input(event):
-	if not event is InputEventMouseMotion and Input.mouse_button_pressed(MOUSE_BUTTON_RIGHT):
-				if not Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
-						Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+func _unhandled_input(event):
+	#if event is Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT):
+		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED and not Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT):
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 func _physics_process(delta):
 	# Add the gravity.

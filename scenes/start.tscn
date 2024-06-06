@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dl8jibholv1jl"]
 
-[ext_resource type="FontFile" uid="uid://birdyrilafa5t" path="res://Melted Monster.ttf" id="1_vdiui"]
-[ext_resource type="Script" path="res://scripts/start.gd" id="2_pk2ww"]
+[ext_resource type="Script" path="res://scripts/start.gd" id="1_j8tlw"]
+[ext_resource type="FontFile" uid="uid://birdyrilafa5t" path="res://font/Melted Monster.ttf" id="1_vdiui"]
 
 [sub_resource type="Animation" id="Animation_dpjwd"]
 length = 0.001
@@ -280,7 +280,8 @@ _data = {
 "animation1": SubResource("Animation_jovs1")
 }
 
-[node name="main menu" type="Node2D"]
+[node name="start" type="Node2D"]
+script = ExtResource("1_j8tlw")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -393,14 +394,13 @@ theme_override_font_sizes/font_size = 61
 text = "G"
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-offset_left = -1.0
-offset_top = 7.0
-offset_right = 1912.0
-offset_bottom = 1079.0
+offset_left = 8.0
+offset_top = 24.0
+offset_right = 1921.0
+offset_bottom = 1096.0
 color = Color(1, 1, 1, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_g51se")
 }
-script = ExtResource("2_pk2ww")

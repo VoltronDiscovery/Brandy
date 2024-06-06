@@ -1,46 +1,22 @@
-[gd_scene load_steps=8 format=3 uid="uid://c0cmvu63ge44n"]
+[gd_scene load_steps=4 format=3 uid="uid://c0cmvu63ge44n"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_xbgnk"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_4jfon"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nb0f3"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_dv7qs"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1g5qm"]
-sky_top_color = Color(0.580392, 0.717647, 0.968627, 1)
-sky_horizon_color = Color(0.596078, 0.67451, 0.670588, 1)
-sky_curve = 0.197926
-sky_cover_modulate = Color(0.705882, 0.494118, 0.321569, 1)
-
-[sub_resource type="Sky" id="Sky_uheh7"]
-sky_material = SubResource("ProceduralSkyMaterial_1g5qm")
-
-[sub_resource type="Environment" id="Environment_2cp4d"]
-background_mode = 2
-background_color = Color(0.694118, 0.694118, 0.694118, 1)
-sky = SubResource("Sky_uheh7")
-
 [node name="Player" type="Node3D"]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-transform = Transform3D(20.0316, 0, 0, 0, 0.265141, 0, 0, 0, 23.2007, 0, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-shape = SubResource("BoxShape3D_4jfon")
-
-[node name="CSGBox3D" type="CSGBox3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.10527, 0)
-
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.46501, 0)
+transform = Transform3D(1, 0, 0, 0, 0.86436, 0, 0, 0, 0.848741, 0, 1.46501, 5.86739)
 script = ExtResource("1_xbgnk")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
 shape = SubResource("CapsuleShape3D_nb0f3")
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0185022, 0.0288477, -0.0251489)
 mesh = SubResource("CapsuleMesh_dv7qs")
 
 [node name="neck" type="Node3D" parent="CharacterBody3D"]
@@ -50,15 +26,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.149126, 0.247366, 0.087947
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0726984, -0.141522, -0.132919)
 fov = 59.3843
 near = 0.041
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_2cp4d")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.598632, 0.10716, -0.793824, 0.801024, -0.0800842, 0.593251, -2.39081e-09, -0.991011, -0.133779, -1.18165, 7.39753, -0.310759)
-light_color = Color(0.988235, 0.74902, 0.458824, 1)
-light_energy = 2.535
-light_indirect_energy = 0.946
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 offset = Vector2(2.08165e-12, 2.08165e-12)
