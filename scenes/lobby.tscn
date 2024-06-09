@@ -374,10 +374,8 @@ process_physics_priority = 170
 transform = Transform3D(1.06534, 0, 0, 0, 1, 0, 0, 0, 1.04707, 3.12338, -0.0500757, 3.38813)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Lobby"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="Lobby/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="Node3D" type="Node3D" parent="."]
 
