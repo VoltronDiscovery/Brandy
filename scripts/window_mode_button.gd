@@ -6,6 +6,7 @@ extends Control
 const WINDOW_MODE_ARRAY :Array[String] = [
 	"Full-screen", 
 	"Window_mode",
+	"Maximized-screen"
 ]
 
 func _ready():
@@ -23,4 +24,7 @@ func on_window_mode_selected(index : int) -> void:
 			DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, false)
 		1: #Window mode 
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+			DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, false)
+		2: #Maximized screen
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
 			DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, false)

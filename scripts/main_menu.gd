@@ -18,10 +18,10 @@ func _on_start_pressed():
 func _on_exit_pressed():
 	get_tree().quit()
 
-
+# changes scenes to option scene
 func _on_options_pressed():
 	get_tree().change_scene_to_file("res://scenes/settings_tab.tscn")
 
 
-func _on_exit_ready():
-	pass # Replace with function body.
+#func _on_exit_ready():
+	#pass # Replace with function body.

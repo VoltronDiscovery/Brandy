@@ -2,7 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://birdyrilafa5t" path="res://font/Melted Monster.ttf" id="1_nj072"]
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_ptn2r"]
-[ext_resource type="AudioStream" uid="uid://cykycuvcctc3e" path="res://ScaryMusic2018-12-17_-_Halloween_-_David_Fesliyan.wav" id="3_7meph"]
+[ext_resource type="AudioStream" uid="uid://cykycuvcctc3e" path="res://music/ScaryMusic2018-12-17_-_Halloween_-_David_Fesliyan.wav" id="3_7meph"]
 
 [sub_resource type="VideoStreamTheora" id="VideoStreamTheora_8rv4e"]
 file = "res://Intro.ogv"

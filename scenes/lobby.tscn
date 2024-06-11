@@ -1,17 +1,17 @@
-[gd_scene load_steps=21 format=3 uid="uid://w7uvjqqdj1he"]
+[gd_scene load_steps=19 format=3 uid="uid://w7uvjqqdj1he"]
 
 [ext_resource type="Script" path="res://scenes/ui.gd" id="1_ujxaf"]
-[ext_resource type="AudioStream" uid="uid://uys24y0vt5co" path="res://backgroundmusic.wav" id="2_0t31g"]
-[ext_resource type="PackedScene" uid="uid://bgjxvoe705cjt" path="res://models/Lobby.glb" id="2_3mipo"]
+[ext_resource type="AudioStream" uid="uid://uys24y0vt5co" path="res://music/backgroundmusic.wav" id="2_0t31g"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="3_vmntp"]
-[ext_resource type="PackedScene" uid="uid://duw2nsey1tpjn" path="res://models/Board.glb" id="4_m1dbl"]
-[ext_resource type="PackedScene" uid="uid://cwq4gxhbonx0f" path="res://models/Lamp.glb" id="5_660em"]
-[ext_resource type="PackedScene" uid="uid://w5phj8tn4gxe" path="res://models/Building1.glb" id="6_pjy44"]
-[ext_resource type="PackedScene" uid="uid://fnubus2ckeu" path="res://models/Building2.glb" id="7_q3bas"]
-[ext_resource type="PackedScene" uid="uid://ce0f15bci2qwt" path="res://models/Building3.glb" id="8_biuoc"]
-[ext_resource type="PackedScene" uid="uid://cxeeap8k7e1f8" path="res://models/Building4.glb" id="9_hi1we"]
+[ext_resource type="PackedScene" uid="uid://n4q0irn6vmb4" path="res://models/building.dae" id="6_cwkgv"]
+[ext_resource type="PackedScene" uid="uid://ctj3aj1gqxqgw" path="res://models/ground.dae" id="7_h1hj1"]
+[ext_resource type="PackedScene" uid="uid://dgogh5s5lruy1" path="res://models/building1.dae" id="7_ngety"]
+[ext_resource type="PackedScene" uid="uid://bkr1uufmltikx" path="res://models/building2.dae" id="8_mybwe"]
+[ext_resource type="PackedScene" uid="uid://cxkgn4d71we8d" path="res://models/building3.dae" id="9_ax4m7"]
 [ext_resource type="FontFile" uid="uid://birdyrilafa5t" path="res://font/Melted Monster.ttf" id="10_al3n1"]
-[ext_resource type="PackedScene" uid="uid://cpetljrcy0ioa" path="res://ground.blend" id="12_rfwke"]
+[ext_resource type="PackedScene" uid="uid://dxbuid81gfqjc" path="res://models/lamp.dae" id="10_atd2w"]
+[ext_resource type="PackedScene" uid="uid://8w35a284swjh" path="res://models/board.dae" id="11_l42do"]
+[ext_resource type="PackedScene" uid="uid://cqsvt17buaxx7" path="res://models/wnl.dae" id="12_l1cuy"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_enst7"]
 sky_top_color = Color(0.0235294, 0.0431373, 0.2, 1)
@@ -56,12 +56,6 @@ dof_blur_amount = 0.13
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_dv7qs"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_gcb47"]
-size = Vector3(3.04352, 2.17578, 0.380554)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_dv2vw"]
-size = Vector3(0.243286, 2.08014, 0.160889)
-
 [node name="lobby" type="Node3D"]
 
 [node name="ui" type="Node2D" parent="."]
@@ -89,7 +83,7 @@ environment = SubResource("Environment_h7eak")
 camera_attributes = SubResource("CameraAttributesPractical_pgb8k")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
-transform = Transform3D(0.994043, 0.0377406, -0.102245, 0.0539298, 0.644904, 0.762358, 0.0947103, -0.763331, 0.639027, 0, 12.6098, 6.4575)
+transform = Transform3D(0.994043, 0.0377405, -0.102245, 0.0698755, 0.499266, 0.863627, 0.0836413, -0.865627, 0.493654, 0, 12.6098, 6.4575)
 light_energy = 0.425
 light_indirect_energy = 1.328
 light_volumetric_fog_energy = 1.691
@@ -107,10 +101,10 @@ autoplay = true
 mix_target = 2
 
 [node name="Player" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1.13056, 0, 0, 0, 1, 9.88942, 0.245052, -46.442)
+transform = Transform3D(0.649659, 0, 0, 0, 0.918733, 0, 0, 0, 0.773044, 10.2738, 0.215118, -1.33811)
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="Player"]
-transform = Transform3D(0.63961, 0, 0, 0, 0.451886, 0, 0, 0, 0.58172, -0.19387, 1.06391, 5.86739)
+transform = Transform3D(0.63961, 0, 0, 0, 0.451886, 0, 0, 0, 0.58172, 1.40433, 1.26724, 0.482586)
 script = ExtResource("3_vmntp")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player/CharacterBody3D"]
@@ -140,247 +134,126 @@ offset_right = 948.0
 offset_bottom = 526.0
 
 [node name="Light source" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.72577, 2.81719, 4.97582)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.72577, 2.81719, 10.147)
 
-[node name="light1" type="OmniLight3D" parent="Light source"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.22762, 0.0421464, -3.11344)
-light_color = Color(0.596078, 0.0313726, 0.141176, 1)
-light_energy = 16.0
-light_indirect_energy = 1.904
-light_volumetric_fog_energy = 1.904
+[node name="OmniLight3D" type="OmniLight3D" parent="Light source"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.51037, -0.210351, -12.2793)
+light_color = Color(1, 0.133333, 0.117647, 1)
+light_energy = 10.0
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_size = 1.43
+light_specular = 0.0
+distance_fade_begin = 40.8
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Light source"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.42305, -0.210351, -7.88166)
+light_color = Color(1, 0.133333, 0.117647, 1)
+light_energy = 10.0
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
 light_size = 1.0
-light_specular = 0.606
-omni_range = 2.78376
+light_specular = 0.0
 
-[node name="light2" type="OmniLight3D" parent="Light source"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.21685, 0, 0)
-light_color = Color(0.596078, 0.0313726, 0.141176, 1)
-light_energy = 16.0
-light_indirect_energy = 1.904
-light_volumetric_fog_energy = 1.904
-light_size = 1.0
-light_specular = 0.606
-omni_range = 2.78376
-
-[node name="SpotLight3D2" type="SpotLight3D" parent="Light source"]
-transform = Transform3D(1, 0, 0, 0, 0.000209501, 1, 0, -1, 0.000209501, -19.0775, 1.06428, -4.53581)
-light_color = Color(1, 0.490196, 0.529412, 1)
+[node name="OmniLight3D5" type="OmniLight3D" parent="Light source"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.25464, -0.686447, -10.5648)
+light_color = Color(1, 0.133333, 0.117647, 1)
 light_energy = 16.0
 light_indirect_energy = 0.0
-light_size = 1.0
-light_specular = 16.0
-spot_range = 3.37546
-spot_angle = 26.7188
+light_volumetric_fog_energy = 0.0
+light_size = 0.65
+light_specular = 0.0
+omni_range = 1.5477
 
-[node name="SpotLight3D3" type="SpotLight3D" parent="Light source"]
-transform = Transform3D(1, 0, 0, 0, -0.0144508, 0.999896, 0, -0.999896, -0.0144508, -20.4753, 1.71434, -2.44078)
-light_color = Color(1, 0.490196, 0.529412, 1)
-light_energy = 16.0
+[node name="OmniLight3D6" type="OmniLight3D" parent="Light source"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.37477, -0.618095, -9.32487)
+light_color = Color(1, 0.133333, 0.117647, 1)
+light_energy = 10.0
 light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
 light_size = 1.0
-light_specular = 16.0
-spot_range = 5.96496
-spot_angle = 26.7188
+light_specular = 0.0
+omni_range = 1.30953
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="Light source"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.15217, -0.222485, -12.2797)
+light_color = Color(1, 0.133333, 0.117647, 1)
+light_energy = 10.0
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_size = 1.21
+light_specular = 0.0
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="Light source"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.14722, -0.113858, -7.92039)
+light_color = Color(1, 0.133333, 0.117647, 1)
+light_energy = 10.0
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_size = 1.0
+light_specular = 0.0
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Light source"]
-transform = Transform3D(1, 0, 0, 0, -0.00497416, 0.999988, 0, -0.999988, -0.00497416, -19.0161, 1.15616, -0.272431)
-light_color = Color(1, 0.490196, 0.529412, 1)
-light_energy = 16.0
-light_indirect_energy = 0.0
+transform = Transform3D(1, 0, 0, 0, -0.0161261, 0.99987, 0, -0.99987, -0.0161261, -19.2034, 0.796057, -10.7015)
+light_color = Color(1, 0.054902, 0.0588235, 1)
+light_energy = 12.322
 light_size = 1.0
-light_specular = 16.0
-spot_range = 3.37546
-spot_angle = 26.7188
+light_specular = 0.0
+spot_range = 4.5709
 
-[node name="SpotLight3D4" type="SpotLight3D" parent="Light source"]
-transform = Transform3D(1, 0, 0, 0, -0.00497416, 0.999988, 0, -0.999988, -0.00497416, -15.9209, 1.15616, -0.272431)
-light_color = Color(1, 0.490196, 0.529412, 1)
-light_energy = 16.0
-light_indirect_energy = 0.0
+[node name="SpotLight3D2" type="SpotLight3D" parent="Light source"]
+transform = Transform3D(1, 0, 0, 0, -0.0161261, 0.99987, 0, -0.99987, -0.0161261, -19.2034, 0.796057, -8.6428)
+light_color = Color(1, 0.054902, 0.0588235, 1)
+light_energy = 12.322
 light_size = 1.0
-light_specular = 16.0
-spot_range = 3.37546
-spot_angle = 26.7188
+light_specular = 0.0
+spot_range = 4.5709
 
-[node name="SpotLight3D5" type="SpotLight3D" parent="Light source"]
-transform = Transform3D(1, 0, 0, 0, -0.00497416, 0.999988, 0, -0.999988, -0.00497416, -15.9145, 1.15616, -4.25197)
-light_color = Color(1, 0.490196, 0.529412, 1)
-light_energy = 16.0
-light_indirect_energy = 0.0
+[node name="SpotLight3D3" type="SpotLight3D" parent="Light source"]
+transform = Transform3D(1, 0, 0, 0, -0.0161261, 0.99987, 0, -0.99987, -0.0161261, -19.2936, 0.777504, -12.3471)
+light_color = Color(1, 0.054902, 0.0588235, 1)
+light_energy = 12.322
 light_size = 1.0
-light_specular = 16.0
-spot_range = 3.37546
-spot_angle = 26.7188
+light_specular = 0.0
+spot_range = 4.5709
 
-[node name="light3" type="OmniLight3D" parent="Light source"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00331259, -0.109752, -3.17723)
-light_color = Color(0.596078, 0.0313726, 0.141176, 1)
-light_energy = 16.0
-light_indirect_energy = 1.904
-light_volumetric_fog_energy = 1.904
-light_size = 1.0
-light_specular = 0.606
-omni_range = 2.78376
+[node name="ground" parent="." instance=ExtResource("7_h1hj1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.38448, -1.90735e-06, 26.8864)
 
-[node name="light4" type="OmniLight3D" parent="Light source"]
-light_color = Color(0.596078, 0.0313726, 0.141176, 1)
-light_energy = 16.0
-light_indirect_energy = 1.904
-light_volumetric_fog_energy = 1.904
-light_size = 1.0
-light_specular = 0.606
-omni_range = 2.78376
+[node name="building" parent="." instance=ExtResource("6_cwkgv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.98785, -0.0773954, 0.142192)
 
-[node name="light5" type="OmniLight3D" parent="Light source"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.30662, -0.667634, -0.897372)
-light_color = Color(0.760784, 0.160784, 0.27451, 1)
-light_energy = 2.924
-light_indirect_energy = 1.904
-light_volumetric_fog_energy = 1.904
-light_size = 1.0
-light_specular = 0.606
-omni_range = 8.29813
+[node name="building1" parent="." instance=ExtResource("7_ngety")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.83743, 0.0777984, 0.18382)
 
-[node name="light10" type="OmniLight3D" parent="Light source"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.32401, -0.667585, -0.107859)
-light_color = Color(0.760784, 0.160784, 0.27451, 1)
-light_energy = 2.924
-light_indirect_energy = 1.904
-light_volumetric_fog_energy = 1.904
-light_size = 1.0
-light_specular = 0.606
-omni_range = 8.29813
+[node name="building2" parent="." instance=ExtResource("8_mybwe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.37155, 0.143188, -0.0720379)
 
-[node name="light6" type="OmniLight3D" parent="Light source"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.11083, -1.59065, -4.65137)
-light_color = Color(0.760784, 0.160784, 0.27451, 1)
-light_energy = 2.924
-light_indirect_energy = 1.904
-light_volumetric_fog_energy = 1.904
-light_size = 1.0
-light_specular = 0.606
-omni_range = 2.78376
+[node name="building3" parent="." instance=ExtResource("9_ax4m7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.39785, -0.0745125, -0.148006)
 
-[node name="light7" type="OmniLight3D" parent="Light source"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.79162, -1.59064, -4.68284)
-light_color = Color(0.760784, 0.160784, 0.27451, 1)
-light_energy = 2.924
-light_indirect_energy = 1.904
-light_volumetric_fog_energy = 1.904
-light_size = 1.0
-light_specular = 0.606
-omni_range = 2.78376
+[node name="lamp" parent="." instance=ExtResource("10_atd2w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.70562, 0.0527973, 4.01342)
 
-[node name="light8" type="OmniLight3D" parent="Light source"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.63447, -1.59065, 1.26434)
-light_color = Color(0.760784, 0.160784, 0.27451, 1)
-light_energy = 2.924
-light_indirect_energy = 1.904
-light_volumetric_fog_energy = 1.904
-light_size = 1.0
-light_specular = 0.606
-omni_range = 2.78376
+[node name="lamp2" parent="." instance=ExtResource("10_atd2w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.70562, 0.0527973, -0.358876)
 
-[node name="light9" type="OmniLight3D" parent="Light source"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.48108, -1.59065, -1.42885)
-light_color = Color(0.760784, 0.160784, 0.27451, 1)
-light_energy = 2.924
-light_indirect_energy = 1.904
-light_volumetric_fog_energy = 1.904
-light_size = 1.0
-light_specular = 0.606
-omni_range = 2.78376
+[node name="lamp3" parent="." instance=ExtResource("10_atd2w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.00917, 0.0527973, 4.01342)
 
-[node name="Board" parent="." instance=ExtResource("4_m1dbl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.03165, 0, 4.11325)
+[node name="lamp4" parent="." instance=ExtResource("10_atd2w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.00917, 0.0527973, -0.358876)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Board"]
+[node name="board" parent="." instance=ExtResource("11_l42do")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.63532, 0.0444465, -0.363736)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Board/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.292816, 1.71713, -5.16036)
-shape = SubResource("BoxShape3D_gcb47")
+[node name="board2" parent="." instance=ExtResource("11_l42do")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.63532, 0.0444465, -8.79066)
 
-[node name="Board2" parent="." instance=ExtResource("4_m1dbl")]
-transform = Transform3D(-4.37114e-08, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -1, 3.48787e-16, -4.37114e-08, 3.032, 2.08165e-12, 3.74001)
+[node name="board3" parent="." instance=ExtResource("11_l42do")]
+transform = Transform3D(-4.37114e-08, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -1, 3.48787e-16, -4.37114e-08, -7.87858, 0.044446, 0.333956)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Board2"]
-transform = Transform3D(1, 0, 0, 0, 1, 1.12238e-23, 0, 1.12238e-23, 1, 0, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Board2/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.292816, 1.71713, -5.16036)
-shape = SubResource("BoxShape3D_gcb47")
-
-[node name="Board3" parent="." instance=ExtResource("4_m1dbl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.032, 2.08165e-12, 13.0541)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Board3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0017662, 9.53674e-07, -0.0263538)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Board3/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.292816, 1.71713, -5.16036)
-shape = SubResource("BoxShape3D_gcb47")
-
-[node name="Lamp3" parent="." instance=ExtResource("5_660em")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.05841, 0.148163, 3.0492)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Lamp3"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Lamp3/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.55475, 1.56914, -1.27217)
-shape = SubResource("BoxShape3D_dv2vw")
-
-[node name="Lamp4" parent="." instance=ExtResource("5_660em")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.05841, 0.148163, 6.23871)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Lamp4"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Lamp4/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.55475, 1.56914, -1.27217)
-shape = SubResource("BoxShape3D_dv2vw")
-
-[node name="Lamp5" parent="." instance=ExtResource("5_660em")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.17931, 0.148163, 3.0492)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Lamp5"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Lamp5/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.55475, 1.56914, -1.27217)
-shape = SubResource("BoxShape3D_dv2vw")
-
-[node name="Lamp6" parent="." instance=ExtResource("5_660em")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.17931, 0.148163, 6.23871)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Lamp6"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Lamp6/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.55475, 1.56914, -1.27217)
-shape = SubResource("BoxShape3D_dv2vw")
-
-[node name="Building1" parent="." instance=ExtResource("6_pjy44")]
-transform = Transform3D(1.01938, 0, 0, 0, 1.00443, 0, 0, 0, 1.13274, 2.14647, 1.90735e-06, 4.42994)
-
-[node name="Building2" parent="." instance=ExtResource("7_q3bas")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.59839, 0, 2.71372)
-
-[node name="Building3" parent="." instance=ExtResource("8_biuoc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.01298, 0, 4.39389)
-
-[node name="Building4" parent="." instance=ExtResource("9_hi1we")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.23453, 0, 2.80883)
-
-[node name="Lobby" parent="." instance=ExtResource("2_3mipo")]
-process_mode = 3
-process_priority = 680
-process_physics_priority = 170
-transform = Transform3D(1.06534, 0, 0, 0, 1, 0, 0, 0, 1.04707, 3.12338, -0.0500757, 3.38813)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Lobby"]
-
-[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="Lobby/StaticBody3D"]
-
-[node name="Node3D" type="Node3D" parent="."]
-
-[node name="ground" parent="." instance=ExtResource("12_rfwke")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.1563, 0, -19.0387)
+[node name="wnl" parent="." instance=ExtResource("12_l1cuy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.870619, -0.0955899, 0.175734)
 
 [connection signal="pressed" from="ui/Control/back" to="ui" method="_on_back_pressed"]
