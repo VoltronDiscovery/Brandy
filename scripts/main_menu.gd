@@ -17,3 +17,11 @@ func _on_start_pressed():
 # change scenes to normal screen (Player leaves the game)
 func _on_exit_pressed():
 	get_tree().quit()
+
+
+func _on_options_pressed():
+	get_tree().change_scene_to_file("res://scenes/settings_tab.tscn")
+
+
+func _on_exit_ready():
+	pass # Replace with function body.

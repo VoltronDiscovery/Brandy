@@ -1,8 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://b4q26ouwyhmuj"]
+[gd_scene load_steps=9 format=3 uid="uid://b4q26ouwyhmuj"]
 
 [ext_resource type="FontFile" uid="uid://birdyrilafa5t" path="res://font/Melted Monster.ttf" id="1_nj072"]
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_ptn2r"]
 [ext_resource type="AudioStream" uid="uid://cykycuvcctc3e" path="res://ScaryMusic2018-12-17_-_Halloween_-_David_Fesliyan.wav" id="3_7meph"]
+
+[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_8rv4e"]
+file = "res://Intro.ogv"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hliwi"]
 bg_color = Color(0.992157, 0.494118, 0.47451, 1)
@@ -25,16 +28,21 @@ anchors_preset = 0
 offset_right = 94.0
 offset_bottom = 136.0
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 1919.0
-offset_bottom = 1081.0
-color = Color(0, 0, 0, 1)
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_left = -4.0
+offset_top = 1.0
+offset_right = 1916.0
+offset_bottom = 1089.0
+stream = SubResource("VideoStreamTheora_8rv4e")
+autoplay = true
+loop = true
 
 [node name="Title" type="Label" parent="."]
-offset_left = 463.0
-offset_top = 180.0
-offset_right = 1499.0
-offset_bottom = 583.0
+offset_left = 456.0
+offset_top = 336.0
+offset_right = 1492.0
+offset_bottom = 739.0
+scale = Vector2(1, 0.72)
 theme_override_colors/font_color = Color(0.929412, 0, 0.0392157, 1)
 theme_override_fonts/font = ExtResource("1_nj072")
 theme_override_font_sizes/font_size = 323
@@ -43,12 +51,12 @@ horizontal_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = -1
-anchor_right = 0.5
+anchor_right = 0.517
 anchor_bottom = 0.5
 offset_left = 733.0
-offset_top = 549.0
+offset_top = 585.0
 offset_right = 1208.0
-offset_bottom = 727.0
+offset_bottom = 854.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -69,7 +77,7 @@ theme_override_fonts/font = ExtResource("1_nj072")
 theme_override_font_sizes/font_size = 69
 text = "START GAME"
 
-[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_u8ysv")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -79,11 +87,26 @@ theme_override_colors/icon_pressed_color = Color(0.882353, 0, 0.380392, 1)
 theme_override_colors/icon_focus_color = Color(1, 0.564706, 0.933333, 1)
 theme_override_fonts/font = ExtResource("1_nj072")
 theme_override_font_sizes/font_size = 69
-text = "EXIT GAME"
+text = "OPTIONS"
+
+[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_wl7ko")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.490196, 0.490196, 0.490196, 1)
+theme_override_colors/font_outline_color = Color(0.6, 0.6, 0.6, 1)
+theme_override_colors/icon_pressed_color = Color(0.882353, 0, 0.380392, 1)
+theme_override_colors/icon_focus_color = Color(1, 0.564706, 0.933333, 1)
+theme_override_fonts/font = ExtResource("1_nj072")
+theme_override_font_sizes/font_size = 69
+text = "EXIT game"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_7meph")
 autoplay = true
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="ready" from="MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_ready"]

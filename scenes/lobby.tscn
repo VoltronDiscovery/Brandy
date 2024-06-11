@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://w7uvjqqdj1he"]
+[gd_scene load_steps=21 format=3 uid="uid://w7uvjqqdj1he"]
 
 [ext_resource type="Script" path="res://scenes/ui.gd" id="1_ujxaf"]
 [ext_resource type="AudioStream" uid="uid://uys24y0vt5co" path="res://backgroundmusic.wav" id="2_0t31g"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://ce0f15bci2qwt" path="res://models/Building3.glb" id="8_biuoc"]
 [ext_resource type="PackedScene" uid="uid://cxeeap8k7e1f8" path="res://models/Building4.glb" id="9_hi1we"]
 [ext_resource type="FontFile" uid="uid://birdyrilafa5t" path="res://font/Melted Monster.ttf" id="10_al3n1"]
+[ext_resource type="PackedScene" uid="uid://cpetljrcy0ioa" path="res://ground.blend" id="12_rfwke"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_enst7"]
 sky_top_color = Color(0.0235294, 0.0431373, 0.2, 1)
@@ -106,7 +107,7 @@ autoplay = true
 mix_target = 2
 
 [node name="Player" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1.13056, 0, 0, 0, 1, 2.14734, 0.00525206, 1.35474)
+transform = Transform3D(1, 0, 0, 0, 1.13056, 0, 0, 0, 1, 9.88942, 0.245052, -46.442)
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="Player"]
 transform = Transform3D(0.63961, 0, 0, 0, 0.451886, 0, 0, 0, 0.58172, -0.19387, 1.06391, 5.86739)
@@ -378,5 +379,8 @@ transform = Transform3D(1.06534, 0, 0, 0, 1, 0, 0, 0, 1.04707, 3.12338, -0.05007
 [node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="Lobby/StaticBody3D"]
 
 [node name="Node3D" type="Node3D" parent="."]
+
+[node name="ground" parent="." instance=ExtResource("12_rfwke")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.1563, 0, -19.0387)
 
 [connection signal="pressed" from="ui/Control/back" to="ui" method="_on_back_pressed"]
