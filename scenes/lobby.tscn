@@ -28,8 +28,7 @@ background_mode = 2
 background_energy_multiplier = 4.41
 sky = SubResource("Sky_l2lfe")
 ambient_light_color = Color(0.972549, 0.972549, 0.988235, 1)
-ssr_enabled = true
-ssr_max_steps = 60
+ssr_max_steps = 300
 ssr_fade_in = 0.172305
 ssr_fade_out = 0.00781251
 ssr_depth_tolerance = 73.71
@@ -45,7 +44,10 @@ glow_bloom = 0.34
 glow_hdr_threshold = 1.08
 glow_hdr_scale = 3.1
 glow_map_strength = 0.85
-fog_light_color = Color(0.501961, 0.0901961, 0.203922, 1)
+fog_enabled = true
+fog_light_color = Color(0.0156863, 0.0117647, 0.0941176, 1)
+fog_light_energy = 16.0
+fog_sun_scatter = 0.36
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_pgb8k"]
 dof_blur_near_distance = 0.97

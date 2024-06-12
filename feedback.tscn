@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bcvwp5u83q6xc"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1916.0
+offset_bottom = 1083.0
+color = Color(0, 0, 0, 1)
+
+[node name="LinkButton" type="LinkButton" parent="."]
+offset_left = 352.0
+offset_top = 411.0
+offset_right = 1570.0
+offset_bottom = 713.0
+theme_override_font_sizes/font_size = 111
+text = "Feedback (CLICK HERE)"
