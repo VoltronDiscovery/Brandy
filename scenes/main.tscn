@@ -1,6 +1,5 @@
-[gd_scene load_steps=11 format=3 uid="uid://2vfy65wa8ek6"]
+[gd_scene load_steps=10 format=3 uid="uid://2vfy65wa8ek6"]
 
-[ext_resource type="Script" path="res://scripts/main.gd" id="1_d0pjt"]
 [ext_resource type="PackedScene" uid="uid://c0cmvu63ge44n" path="res://scenes/player.tscn" id="1_e5df4"]
 [ext_resource type="PackedScene" uid="uid://driput710bw8a" path="res://models/monster.glb" id="2_aixpk"]
 [ext_resource type="Script" path="res://scripts/monster.gd" id="3_0scnd"]
@@ -30,7 +29,6 @@ size = Vector3(3.46854, 6.85199, 3.08899)
 
 [node name="main" type="Node3D"]
 transform = Transform3D(0.719861, 0, 0, 0, 1.00086, 0, 0, 0, 0.630293, 0, 0, 0)
-script = ExtResource("1_d0pjt")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_j4f7l")

@@ -1,6 +1,6 @@
-[gd_scene load_steps=21 format=3 uid="uid://w7uvjqqdj1he"]
+[gd_scene load_steps=21 format=3 uid="uid://ndaqjhr1cvrm"]
 
-[ext_resource type="Script" path="res://scenes/ui.gd" id="1_ujxaf"]
+[ext_resource type="Script" path="res://scripts/ui.gd" id="1_syrc7"]
 [ext_resource type="AudioStream" uid="uid://uys24y0vt5co" path="res://music/backgroundmusic.wav" id="2_0t31g"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="3_vmntp"]
 [ext_resource type="PackedScene" uid="uid://n4q0irn6vmb4" path="res://models/building.dae" id="6_cwkgv"]
@@ -74,7 +74,7 @@ size = Vector3(0.490845, 0.419983, 0.644806)
 [node name="lobby" type="Node3D"]
 
 [node name="ui" type="Node2D" parent="."]
-script = ExtResource("1_ujxaf")
+script = ExtResource("1_syrc7")
 
 [node name="Control" type="Control" parent="ui"]
 layout_mode = 3
