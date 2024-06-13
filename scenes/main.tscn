@@ -1,19 +1,55 @@
-[gd_scene load_steps=3 format=3 uid="uid://2vfy65wa8ek6"]
+[gd_scene load_steps=9 format=3 uid="uid://2vfy65wa8ek6"]
 
 [ext_resource type="PackedScene" uid="uid://c0cmvu63ge44n" path="res://scenes/player.tscn" id="1_e5df4"]
+[ext_resource type="PackedScene" uid="uid://snvre63mh02j" path="res://models/monster.blend" id="2_aixpk"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_381ol"]
+sky_top_color = Color(0.0196078, 0.0470588, 0.258824, 1)
+sky_horizon_color = Color(0.423529, 0.0470588, 0.262745, 1)
+sky_energy_multiplier = 0.2
+ground_bottom_color = Color(0.054902, 0.164706, 0.356863, 1)
+ground_horizon_color = Color(0.518627, 0.552941, 0.652941, 1)
+
+[sub_resource type="Sky" id="Sky_wlhli"]
+sky_material = SubResource("ProceduralSkyMaterial_381ol")
+
+[sub_resource type="Environment" id="Environment_j4f7l"]
+background_mode = 2
+sky = SubResource("Sky_wlhli")
+tonemap_mode = 2
+glow_enabled = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3cfkb"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vhtkf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j1l0v"]
+size = Vector3(3.46854, 6.85199, 3.08899)
 
 [node name="Node3D" type="Node3D"]
 transform = Transform3D(0.719861, 0, 0, 0, 1.00086, 0, 0, 0, 0.630293, 0, 0, 0)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-transform = Transform3D(91.4369, 0, 0, 0, 0.998714, 0, 0, 0, 109.222, 0, 0, 0)
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_j4f7l")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(91.4369, 0, 0, 0, 0.998714, 0, 0, 0, 109.222, 0, -0.818593, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBox3D/StaticBody3D"]
 shape = SubResource("BoxShape3D_3cfkb")
-
-[node name="CSGBox3D" type="CSGBox3D" parent="StaticBody3D"]
 
 [node name="Player" parent="." instance=ExtResource("1_e5df4")]
 transform = Transform3D(1, 0, 0, 0, 0.999998, 0, 0, 0, 0.869878, 1.61428, -0.0604579, 35.3827)
+
+[node name="monster" parent="." instance=ExtResource("2_aixpk")]
+transform = Transform3D(0.713671, 0, 0, 0, 0.299839, 0, 0, 0, 0.560428, -0.22163, -0.00514863, 0.236521)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="monster"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.809062, 2.77397, -0.430013)
+physics_material_override = SubResource("PhysicsMaterial_vhtkf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="monster/StaticBody3D"]
+shape = SubResource("BoxShape3D_j1l0v")
