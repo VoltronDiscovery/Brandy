@@ -1,7 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://2vfy65wa8ek6"]
+[gd_scene load_steps=11 format=3 uid="uid://2vfy65wa8ek6"]
 
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_d0pjt"]
 [ext_resource type="PackedScene" uid="uid://c0cmvu63ge44n" path="res://scenes/player.tscn" id="1_e5df4"]
-[ext_resource type="PackedScene" uid="uid://snvre63mh02j" path="res://models/monster.blend" id="2_aixpk"]
+[ext_resource type="PackedScene" uid="uid://driput710bw8a" path="res://models/monster.glb" id="2_aixpk"]
+[ext_resource type="Script" path="res://scripts/monster.gd" id="3_0scnd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_381ol"]
 sky_top_color = Color(0.0196078, 0.0470588, 0.258824, 1)
@@ -26,8 +28,9 @@ glow_enabled = true
 [sub_resource type="BoxShape3D" id="BoxShape3D_j1l0v"]
 size = Vector3(3.46854, 6.85199, 3.08899)
 
-[node name="Node3D" type="Node3D"]
+[node name="main" type="Node3D"]
 transform = Transform3D(0.719861, 0, 0, 0, 1.00086, 0, 0, 0, 0.630293, 0, 0, 0)
+script = ExtResource("1_d0pjt")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_j4f7l")
@@ -36,7 +39,6 @@ environment = SubResource("Environment_j4f7l")
 transform = Transform3D(91.4369, 0, 0, 0, 0.998714, 0, 0, 0, 109.222, 0, -0.818593, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="CSGBox3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBox3D/StaticBody3D"]
 shape = SubResource("BoxShape3D_3cfkb")
@@ -46,6 +48,7 @@ transform = Transform3D(1, 0, 0, 0, 0.999998, 0, 0, 0, 0.869878, 1.61428, -0.060
 
 [node name="monster" parent="." instance=ExtResource("2_aixpk")]
 transform = Transform3D(0.713671, 0, 0, 0, 0.299839, 0, 0, 0, 0.560428, -0.22163, -0.00514863, 0.236521)
+script = ExtResource("3_0scnd")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="monster"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.809062, 2.77397, -0.430013)

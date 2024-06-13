@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://w7uvjqqdj1he"]
+[gd_scene load_steps=21 format=3 uid="uid://w7uvjqqdj1he"]
 
 [ext_resource type="Script" path="res://scenes/ui.gd" id="1_ujxaf"]
 [ext_resource type="AudioStream" uid="uid://uys24y0vt5co" path="res://music/backgroundmusic.wav" id="2_0t31g"]
@@ -67,6 +67,9 @@ dof_blur_amount = 0.13
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dfhwb"]
 size = Vector3(0.615723, 3.36414, 1.77832)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_33re8"]
+size = Vector3(0.490845, 0.419983, 0.644806)
 
 [node name="lobby" type="Node3D"]
 
@@ -274,5 +277,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.1599, 0.671857, -9.18312)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0929375, 1.9232, -0.0788546)
 shape = SubResource("BoxShape3D_dfhwb")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3905, 1.06349, -0.127711)
+size = Vector3(0.446289, 0.40332, 0.615112)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="CSGBox3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBox3D/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00372314, 0.00302124, -0.00810242)
+shape = SubResource("BoxShape3D_33re8")
 
 [connection signal="pressed" from="ui/Control/back" to="ui" method="_on_back_pressed"]
