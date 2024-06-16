@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1vrjum8aed8p"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_xbgnk"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nb0f3"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_dv7qs"]
+
+[node name="Player" type="Node3D"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.86436, 0, 0, 0, 0.848741, 0, 1.46501, 0.0650496)
+script = ExtResource("1_xbgnk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+shape = SubResource("CapsuleShape3D_nb0f3")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0185022, 0.0288477, -0.0251489)
+mesh = SubResource("CapsuleMesh_dv7qs")
+
+[node name="neck" type="Node3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.149126, 0.247366, 0.0879475)
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D/neck"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0726984, -0.141522, -0.132919)
+fov = 59.3843
+near = 0.041
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+offset = Vector2(2.08165e-12, 2.08165e-12)
+scale = Vector2(1.01, 1.01)
+transform = Transform2D(1.01, 0, 0, 1.01, 2.08165e-12, 2.08165e-12)
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_left = 939.0
+offset_top = 518.0
+offset_right = 948.0
+offset_bottom = 526.0

@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b2r4wkrfrw3ol"]
+[gd_scene load_steps=5 format=3 uid="uid://jy1apnrd63ab"]
 
-[ext_resource type="PackedScene" uid="uid://bkpmicywljvyf" path="res://scenes/window_mode_button.tscn" id="1_6do10"]
+[ext_resource type="PackedScene" uid="uid://dfjtxk1m5jy0w" path="res://scenes/window_mode_button.tscn" id="1_6do10"]
 [ext_resource type="Script" path="res://scripts/settings_tab.gd" id="1_cdn5y"]
-[ext_resource type="PackedScene" uid="uid://15ct12mw3v5h" path="res://scenes/resolution_mode_button.tscn" id="2_6ysf6"]
+[ext_resource type="PackedScene" uid="uid://b40f5gpyxsrsj" path="res://scenes/resolution_mode_button.tscn" id="2_6ysf6"]
 [ext_resource type="FontFile" uid="uid://birdyrilafa5t" path="res://font/Melted Monster.ttf" id="3_5s13g"]
 
 [node name="settings_tab" type="Control"]
