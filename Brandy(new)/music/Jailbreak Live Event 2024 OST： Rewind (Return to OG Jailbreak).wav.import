@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://duxw7kcd07bpx"
+path="res://.godot/imported/Jailbreak Live Event 2024 OST： Rewind (Return to OG Jailbreak).wav-a0e1512c51e6bd07eb4444df671dedb6.sample"
+
+[deps]
+
+source_file="res://music/Jailbreak Live Event 2024 OST： Rewind (Return to OG Jailbreak).wav"
+dest_files=["res://.godot/imported/Jailbreak Live Event 2024 OST： Rewind (Return to OG Jailbreak).wav-a0e1512c51e6bd07eb4444df671dedb6.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

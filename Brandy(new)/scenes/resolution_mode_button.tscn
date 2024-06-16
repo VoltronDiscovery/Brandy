@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://15ct12mw3v5h"]
+
+[ext_resource type="PackedScene" uid="uid://c8c0l6blfxyyn" path="res://scenes/option.tscn" id="1_07tvm"]
+[ext_resource type="Script" path="res://scripts/resolution_mode_button.gd" id="2_3syr6"]
+
+[node name="Resolution_Mode_Button" instance=ExtResource("1_07tvm")]
+script = ExtResource("2_3syr6")
+
+[node name="OptionButton" parent="HBoxContainer" index="2"]
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+item_count = 0
