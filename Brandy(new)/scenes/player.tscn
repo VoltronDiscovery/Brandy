@@ -9,7 +9,7 @@
 [node name="Player" type="Node3D"]
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.86436, 0, 0, 0, 0.848741, 0, 1.46501, 0.0650496)
+transform = Transform3D(0.700689, 0, 0, 0, 0.636349, 0, 0, 0, 0.602051, 0, 1.46501, 0.0650496)
 script = ExtResource("1_xbgnk")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
