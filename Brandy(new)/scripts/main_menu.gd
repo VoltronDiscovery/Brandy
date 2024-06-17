@@ -8,10 +8,6 @@ func _ready():
 func _on_start_pressed():
 	get_tree().change_scene_to_file("res://scenes/lobby.tscn")
 
-# change scenes to normal screen (Player leaves the game)
-func _on_exit_pressed():
-	get_tree().quit()
-
 func _on_feedback_pressed():
 	get_tree().change_scene_to_file("res://scenes/feedback.tscn")
 
@@ -19,3 +15,6 @@ func _on_feedback_pressed():
 func _on_options_pressed():
 	get_tree().change_scene_to_file("res://scenes/settings_tab.tscn")
 
+# change scenes to normal screen (Player leaves the game)
+func _on_exit_pressed():
+	get_tree().quit()
