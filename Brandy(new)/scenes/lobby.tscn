@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dqtj22x7ohuey"]
+[gd_scene load_steps=34 format=3 uid="uid://dqtj22x7ohuey"]
 
 [ext_resource type="PackedScene" uid="uid://dit0r380nfw5o" path="res://models/Lobby.glb" id="1_mlvkp"]
 [ext_resource type="PackedScene" uid="uid://bumd8j0onyrjc" path="res://models/building.glb" id="2_03fpo"]
@@ -10,6 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://c1vrjum8aed8p" path="res://scenes/player.tscn" id="8_mkgre"]
 [ext_resource type="FontFile" uid="uid://birdyrilafa5t" path="res://font/Melted Monster.ttf" id="9_mmnl1"]
 [ext_resource type="PackedScene" uid="uid://bwg51mthhf87g" path="res://models/STATUE OF ANDRE.glb" id="10_dmwa6"]
+[ext_resource type="PackedScene" uid="uid://r0qd6pn8103h" path="res://models/STATUE OF ANDRE1.glb" id="11_xa2en"]
+[ext_resource type="PackedScene" uid="uid://iwo3rhb2b6db" path="res://models/STATUE OF ANDRE2.glb" id="12_xpvw0"]
+[ext_resource type="PackedScene" uid="uid://bt0hku17bbx5" path="res://models/STATUE OF ANDRE3.glb" id="13_03gi8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7uwua"]
 sky_top_color = Color(0.0196078, 0.0392157, 0.211765, 1)
@@ -905,7 +908,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.17978, 0.410091, -9.99382)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.11247, 0.946563, -0.264922)
 shape = SubResource("BoxShape3D_ic4ht")
 
-[node name="STATUE OF ANDRE" parent="." instance=ExtResource("10_dmwa6")]
-transform = Transform3D(-0.277886, 9.75924e-17, 2.68862e-08, 9.69229e-17, 0.279805, -1.07267e-16, -2.42936e-08, -9.75924e-17, -0.307543, -7.49626, 0.967621, -10.8167)
+[node name="Statues" type="Node3D" parent="."]
+transform = Transform3D(-0.187879, 6.23259e-17, 1.90081e-08, 6.55298e-17, 0.178693, -7.58359e-17, -1.6425e-08, -6.23259e-17, -0.217428, -8.9089, 0.967621, -10.8167)
+
+[node name="STATUE OF ANDRE" parent="Statues" instance=ExtResource("10_dmwa6")]
+transform = Transform3D(1, 7.54895e-24, 4.00721e-16, -4.3455e-25, 1, -4.38859e-23, -1.43198e-15, 3.22151e-23, 1, 2.08165e-12, 2.08165e-12, -0.41)
+
+[node name="STATUE OF ANDRE1" parent="Statues" instance=ExtResource("11_xa2en")]
+transform = Transform3D(0.999669, -3.47629e-16, -1.39073e-14, 3.48671e-16, 0.996681, -3.01352e-16, -1.85851e-14, 3.4763e-16, 0.864001, -8.13436, -0.0391369, -0.410004)
+
+[node name="STATUE OF ANDRE2" parent="Statues" instance=ExtResource("12_xpvw0")]
+transform = Transform3D(0.993295, -3.47379e-16, -4.09464e-14, 3.46448e-16, 0.995964, -2.99649e-16, 6.88849e-15, 3.47381e-16, 0.859115, -16.0502, -0.099, -0.41)
+
+[node name="STATUE OF ANDRE3" parent="Statues" instance=ExtResource("13_03gi8")]
+transform = Transform3D(1, -3.45044e-16, -3.00072e-14, 3.48787e-16, 0.989269, -3.01352e-16, -2.86939e-15, 3.45045e-16, 0.864002, -24.292, -0.085341, -0.41)
 
 [connection signal="pressed" from="UI/Button" to="UI" method="_on_button_pressed"]
