@@ -3,7 +3,7 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 @onready var option_button = $HBoxContainer/OptionButton as OptionButton
 
-#resolution dictionary
+# resolution dictionary
 const RESOLUTION_DICTIONARY : Dictionary = {
 	"1152 x 648" : Vector2i(1152, 648),
 	"1280 x 720" : Vector2i(1280, 720),
@@ -20,4 +20,4 @@ func add_resolution_items() -> void:
 		option_button.add_item(resolution_size_text)
 
 func on_resolution_selected(index : int) -> void:
-	pass
+	#DisplayServer.window_set_size(RESOLUTION_DICTIONARY.value()[index])

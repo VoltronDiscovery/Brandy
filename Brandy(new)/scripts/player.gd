@@ -2,6 +2,7 @@ extends CharacterBody3D
 
 const SPEED = 4.0
 const JUMP_VELOCITY = 3.5
+const SPRINT_VELOCITY = 2
 
 @onready var pivot = $neck
 @onready var camera = $neck/Camera3D
@@ -9,6 +10,7 @@ var sensitivity = 0.01
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+
 # Mouse motion controls
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
@@ -43,6 +45,10 @@ func _physics_process(delta):
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
+		# Check if sprinting
+		if Input.is_action_pressed("sprint"):
+			# We are sprinting
+			velocity.z *= SPRINT_VELOCITY
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
