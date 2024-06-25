@@ -12,12 +12,19 @@ const RESOLUTION_DICTIONARY : Dictionary = {
 
 func _ready():
 	add_resolution_items()
-	option_button.item_selected.connect(on_resolution_selected)
-	
 	
 func add_resolution_items() -> void:
 	for resolution_size_text in RESOLUTION_DICTIONARY:
 		option_button.add_item(resolution_size_text)
 
-func on_resolution_selected(index : int) -> void:
-	#DisplayServer.window_set_size(RESOLUTION_DICTIONARY.value()[index])
+# resolution screen sizes 
+func _on_option_button_item_selected(index):
+	var current_select = index
+	
+	if current_select == 0:
+		DisplayServer.window_set_size(Vector2(1152, 648))
+	if current_select == 1:
+		DisplayServer.window_set_size(Vector2(1280, 720))
+	if current_select == 2:
+		DisplayServer.window_set_size(Vector2(1920, 1080))
+	

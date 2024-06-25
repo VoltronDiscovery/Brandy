@@ -9,3 +9,5 @@ script = ExtResource("2_3syr6")
 [node name="OptionButton" parent="HBoxContainer" index="2"]
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 item_count = 0
+
+[connection signal="item_selected" from="HBoxContainer/OptionButton" to="." method="_on_option_button_item_selected"]
