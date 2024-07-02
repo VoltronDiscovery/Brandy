@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 const SPEED = 4.0
-const JUMP_VELOCITY = 3.5
+const JUMP_VELOCITY = 5
 const SPRINT_VELOCITY = 2
 
 @onready var pivot = $neck

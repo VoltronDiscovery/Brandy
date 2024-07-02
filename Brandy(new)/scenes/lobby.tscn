@@ -2184,7 +2184,7 @@ mesh = SubResource("ArrayMesh_aiia0")
 skin = SubResource("Skin_74mn5")
 
 [node name="Player" parent="." instance=ExtResource("8_mkgre")]
-transform = Transform3D(-0.0592024, 0, 0.682138, 0, 0.675241, 0, -0.621779, 0, -0.0649494, 8.62623, 1.25803, -0.729991)
+transform = Transform3D(-2.73017e-08, 2.35515e-16, 0.685223, 2.17849e-16, 0.675241, -2.38997e-16, -0.624591, 2.35515e-16, -2.99521e-08, 8.62623, 1.25803, -0.729991)
 
 [node name="Light souces" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.63919, 2.73004, -1.52814)
