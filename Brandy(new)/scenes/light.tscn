@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://b58iwil5klsxj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5dcm8"]
+shading_mode = 0
+albedo_color = Color(0.733333, 0.435294, 0.14902, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_o0dyv"]
+material = SubResource("StandardMaterial3D_5dcm8")
+
+[node name="light" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.613506, 0, 0, 0, 0.509002, 0, 0, 0, 0.512768, 0, 0, 0)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_o0dyv")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00141835, -0.132745, -0.00568074)
+light_color = Color(0.666667, 0.439216, 0.105882, 1)
+light_energy = 4.58
+shadow_enabled = true
+omni_range = 7.062

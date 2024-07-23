@@ -1,4 +1,4 @@
-[gd_scene load_steps=120 format=3 uid="uid://dqtj22x7ohuey"]
+[gd_scene load_steps=118 format=3 uid="uid://dqtj22x7ohuey"]
 
 [ext_resource type="Texture2D" uid="uid://ba4s11r27yaor" path="res://models/Lobby_betonambientocclusion.png" id="1_n862h"]
 [ext_resource type="Texture2D" uid="uid://bv0jxqcd5x1h3" path="res://models/building_Wood_basecolor.png" id="2_1mciq"]
@@ -27,30 +27,19 @@
 [ext_resource type="Texture2D" uid="uid://d1pbm18w0apuf" path="res://models/light_betonnormal.png" id="16_31omt"]
 [ext_resource type="Script" path="res://scripts/teleporter.gd" id="25_bkjrq"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7uwua"]
-sky_top_color = Color(0.0196078, 0.0392157, 0.211765, 1)
-sky_horizon_color = Color(1, 0.00392157, 0.301961, 1)
-sky_curve = 0.0401916
-sky_energy_multiplier = 2.06
-ground_bottom_color = Color(0.0156863, 0.0117647, 0.00784314, 1)
-ground_horizon_color = Color(0, 0.486275, 0.898039, 1)
-ground_energy_multiplier = 0.0
-sun_angle_max = 58.89
-
-[sub_resource type="Sky" id="Sky_ppwvp"]
-sky_material = SubResource("ProceduralSkyMaterial_7uwua")
-
 [sub_resource type="Environment" id="Environment_jgjvg"]
-background_mode = 2
+background_mode = 1
 background_energy_multiplier = 0.83
-sky = SubResource("Sky_ppwvp")
 ambient_light_color = Color(0.921569, 0.921569, 0.921569, 1)
 ambient_light_energy = 3.36
 reflected_light_source = 2
+tonemap_mode = 3
+tonemap_exposure = 0.33
+tonemap_white = 10.92
 ssr_enabled = true
 ssr_max_steps = 200
-ssr_fade_in = 0.243676
-ssr_fade_out = 1.0
+ssr_fade_in = 1.2
+ssr_fade_out = 0.307786
 ssr_depth_tolerance = 0.01
 ssao_radius = 4.03
 glow_enabled = true
@@ -61,6 +50,19 @@ glow_hdr_threshold = 1.53
 glow_hdr_scale = 2.51
 glow_hdr_luminance_cap = 3.92
 glow_map_strength = 0.81
+fog_enabled = true
+fog_light_color = Color(0.262745, 0.054902, 0.00784314, 1)
+fog_light_energy = 2.92
+fog_sun_scatter = 0.14
+fog_density = 0.0048
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0708
+volumetric_fog_albedo = Color(0.286275, 0.0745098, 0.0666667, 1)
+volumetric_fog_emission = Color(0.0156863, 0.12549, 0.301961, 1)
+volumetric_fog_length = 666.66
+adjustment_enabled = true
+adjustment_contrast = 0.96
+adjustment_saturation = 1.04
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_bnhjr"]
 dof_blur_far_distance = 3.4
@@ -269,7 +271,7 @@ vertex_color_use_as_albedo = true
 albedo_color = Color(0, 0, 0, 1)
 metallic = 1.0
 emission_enabled = true
-emission = Color(0.183338, 0.59567, 0.932925, 1)
+emission = Color(0.517647, 0.027451, 0.0470588, 1)
 emission_energy_multiplier = 16.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ev1t6"]
@@ -1932,7 +1934,7 @@ light_volumetric_fog_energy = 0.677
 light_size = 0.929
 light_specular = 0.419
 distance_fade_begin = 46.76
-omni_range = 3.789
+omni_range = 727.459
 omni_attenuation = 3.24901
 
 [node name="Armature" type="Node3D" parent="."]
@@ -2190,25 +2192,25 @@ transform = Transform3D(-2.73017e-08, 2.35515e-16, 0.685223, 2.17849e-16, 0.6752
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.63919, 2.73004, -1.52814)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Light souces"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1608, 0.035535)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.222173, 0.035535)
 light_color = Color(0.788235, 0, 0, 1)
-light_energy = 0.373
+light_energy = 7.573
 light_indirect_energy = 1.646
 light_volumetric_fog_energy = 0.677
 light_size = 0.929
-light_specular = 0.419
+light_specular = 0.0
 distance_fade_begin = 46.76
 omni_range = 3.789
 omni_attenuation = 0.287175
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="Light souces"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1608, 1.71349)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.28038, 1.75693)
 light_color = Color(0.788235, 0, 0, 1)
-light_energy = 0.373
+light_energy = 7.573
 light_indirect_energy = 1.646
 light_volumetric_fog_energy = 0.677
 light_size = 0.929
-light_specular = 0.419
+light_specular = 0.0
 distance_fade_begin = 46.76
 omni_range = 3.789
 omni_attenuation = 0.287175

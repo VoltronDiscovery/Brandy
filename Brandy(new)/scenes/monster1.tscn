@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://coh3f3cldkurr"]
+
+[ext_resource type="Script" path="res://scripts/monster1.gd" id="1_djn0h"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dkix8"]
+albedo_color = Color(1, 0.341176, 0.282353, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_kinra"]
+material = SubResource("StandardMaterial3D_dkix8")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2dcml"]
+
+[node name="monster" type="CharacterBody3D" groups=["enemy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.990477, 0)
+script = ExtResource("1_djn0h")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_kinra")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_2dcml")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+path_height_offset = 0.5
