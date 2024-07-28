@@ -2,7 +2,7 @@ extends Control
 
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
+func _process(delta):
 	if Input.is_action_just_pressed("paused"):
 		get_tree().paused = !get_tree().paused
 		visible = get_tree().paused

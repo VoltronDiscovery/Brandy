@@ -45,6 +45,7 @@ text = "RESUME"
 [node name="Quit to menu" type="Button" parent="Background"]
 modulate = Color(0.913725, 0.913725, 0.913725, 1)
 self_modulate = Color(1, 0.654902, 0.592157, 1)
+layout_mode = 0
 offset_left = 676.0
 offset_top = 582.0
 offset_right = 1279.0
@@ -56,6 +57,7 @@ text = "EXIT TO MENU"
 [node name="Exit game" type="Button" parent="Background"]
 modulate = Color(0.913725, 0.913725, 0.913725, 1)
 self_modulate = Color(1, 0.654902, 0.592157, 1)
+layout_mode = 0
 offset_left = 678.0
 offset_top = 733.0
 offset_right = 1281.0
