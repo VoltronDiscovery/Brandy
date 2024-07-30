@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c1vrjum8aed8p"]
+[gd_scene load_steps=7 format=3 uid="uid://c1vrjum8aed8p"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_xbgnk"]
 [ext_resource type="Script" path="res://scripts/flashlight.gd" id="2_srbpy"]
+[ext_resource type="AudioStream" uid="uid://14goxl4006gb" path="res://music/flashlight-click-46073.wav" id="3_nmum2"]
 [ext_resource type="Script" path="res://scripts/RayCast3D.gd" id="3_ryirp"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nb0f3"]
@@ -28,17 +29,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0726984, -0.141522, -0.132
 fov = 59.3843
 near = 0.041
 
-[node name="flashlight" type="SpotLight3D" parent="neck"]
-transform = Transform3D(1, 1.21652e-31, 0, -1.21652e-31, 1, 0, 0, 0, 1, -0.0869994, -0.194752, -0.152997)
+[node name="flashlight" type="SpotLight3D" parent="neck/Camera3D"]
+transform = Transform3D(1, 1.21652e-31, 0, -1.21652e-31, 1, 0, 0, 0, 1, -0.014301, -0.05323, -0.020078)
+visible = false
 light_color = Color(0.823529, 0.721569, 0.478431, 1)
-light_energy = 2.44
+light_energy = 5.227
 shadow_enabled = true
 spot_range = 13.38
 spot_angle = 20.0
 script = ExtResource("2_srbpy")
 
-[node name="RayCast3D" type="RayCast3D" parent="neck"]
-transform = Transform3D(1, 0, -1.5246e-23, -1.5246e-23, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+[node name="toggle" type="AudioStreamPlayer3D" parent="neck/Camera3D/flashlight"]
+stream = ExtResource("3_nmum2")
+volume_db = 80.0
+unit_size = 100.0
+pitch_scale = 4.0
+autoplay = true
+
+[node name="RayCast3D" type="RayCast3D" parent="neck/Camera3D"]
+transform = Transform3D(1, 0, -1.5246e-23, -1.5246e-23, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.0726984, 0.141522, 0.132919)
 script = ExtResource("3_ryirp")
 
 [node name="mouse cursor" type="Node3D" parent="."]

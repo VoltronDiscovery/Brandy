@@ -3,7 +3,7 @@ extends CharacterBody3D
 var SPEED = 4.0
 const JUMP_VELOCITY = 5
 const SPRINT_VELOCITY = 2
-var movable = false
+var movable = true
 
 @onready var pivot = $neck
 @onready var camera = $neck/Camera3D

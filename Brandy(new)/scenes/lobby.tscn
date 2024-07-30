@@ -2191,6 +2191,18 @@ transform = Transform3D(-2.73017e-08, 2.35515e-16, 0.685223, 2.17849e-16, 0.6752
 [node name="Light souces" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.63919, 2.73004, -1.52814)
 
+[node name="OmniLight3D8" type="OmniLight3D" parent="Light souces"]
+transform = Transform3D(0.881039, 0, -0.473043, 0, 1, 0, 0.473043, 0, 0.881039, -25.7277, 0.0883479, -5.40426)
+light_color = Color(0.788235, 0, 0, 1)
+light_energy = 3.929
+light_indirect_energy = 1.646
+light_volumetric_fog_energy = 0.677
+light_size = 0.929
+light_specular = 0.419
+distance_fade_begin = 46.76
+omni_range = 3.789
+omni_attenuation = 0.287175
+
 [node name="OmniLight3D" type="OmniLight3D" parent="Light souces"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.222173, 0.035535)
 light_color = Color(0.788235, 0, 0, 1)
@@ -2215,32 +2227,8 @@ distance_fade_begin = 46.76
 omni_range = 3.789
 omni_attenuation = 0.287175
 
-[node name="OmniLight3D7" type="OmniLight3D" parent="Light souces/OmniLight3D2"]
-transform = Transform3D(0.881039, 0, -0.473043, 0, 1, 0, 0.473043, 0, 0.881039, -23.9663, 0.368728, -11.0202)
-light_color = Color(0.788235, 0, 0, 1)
-light_energy = 3.929
-light_indirect_energy = 1.646
-light_volumetric_fog_energy = 0.677
-light_size = 0.929
-light_specular = 0.419
-distance_fade_begin = 46.76
-omni_range = 3.789
-omni_attenuation = 0.287175
-
-[node name="OmniLight3D8" type="OmniLight3D" parent="Light souces/OmniLight3D2"]
-transform = Transform3D(0.881039, 0, -0.473043, 0, 1, 0, 0.473043, 0, 0.881039, -25.7277, 0.368728, -7.73972)
-light_color = Color(0.788235, 0, 0, 1)
-light_energy = 3.929
-light_indirect_energy = 1.646
-light_volumetric_fog_energy = 0.677
-light_size = 0.929
-light_specular = 0.419
-distance_fade_begin = 46.76
-omni_range = 3.789
-omni_attenuation = 0.287175
-
 [node name="OmniLight3D3" type="OmniLight3D" parent="Light souces"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.895, 0.713408, -2.13038)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.895, 1.10848, -2.85525)
 light_color = Color(0.788235, 0, 0, 1)
 light_energy = 3.929
 light_indirect_energy = 1.646
@@ -2287,6 +2275,34 @@ distance_fade_begin = 46.76
 omni_range = 3.789
 omni_attenuation = 0.287175
 
+[node name="OmniLight3D7" type="OmniLight3D" parent="Light souces"]
+transform = Transform3D(0.881039, 0, -0.473043, 0, 1, 0, 0.473043, 0, 0.881039, -24.7998, 0.0883479, -9.26327)
+light_color = Color(0.788235, 0, 0, 1)
+light_energy = 3.929
+light_indirect_energy = 1.646
+light_volumetric_fog_energy = 0.677
+light_size = 0.929
+light_specular = 0.419
+distance_fade_begin = 46.76
+omni_range = 3.789
+omni_attenuation = 0.287175
+
+[node name="OmniLight3D9" type="OmniLight3D" parent="Light souces"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.6492, -0.883756, -8.81103)
+light_color = Color(1, 0.764706, 0.521569, 1)
+
+[node name="OmniLight3D10" type="OmniLight3D" parent="Light souces"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.1611, -0.883756, -8.81103)
+light_color = Color(1, 0.764706, 0.521569, 1)
+
+[node name="OmniLight3D11" type="OmniLight3D" parent="Light souces"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.8155, -0.883756, -8.81103)
+light_color = Color(1, 0.764706, 0.521569, 1)
+
+[node name="OmniLight3D12" type="OmniLight3D" parent="Light souces"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.3274, -0.883756, -8.81103)
+light_color = Color(1, 0.764706, 0.521569, 1)
+
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -2304,6 +2320,12 @@ theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("9_mmnl1")
 theme_override_font_sizes/font_size = 91
 text = "BACK"
+
+[node name="Timer" type="Timer" parent="UI"]
+
+[node name="AcceptDialog" type="AcceptDialog" parent="UI"]
+dialog_text = "sdsdsd"
+dialog_close_on_escape = false
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.17978, 0.410091, -9.99382)
