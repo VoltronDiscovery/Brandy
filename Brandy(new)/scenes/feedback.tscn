@@ -1,34 +1,3 @@
-[gd_scene load_steps=3 format=3 uid="uid://bx3ribwsssrox"]
-
-[ext_resource type="Script" path="res://scripts/feedback.gd" id="1_nl5we"]
-[ext_resource type="FontFile" uid="uid://birdyrilafa5t" path="res://font/Melted Monster.ttf" id="1_p8k7r"]
-
-[node name="feedback" type="Node2D"]
-script = ExtResource("1_nl5we")
-
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 1916.0
-offset_bottom = 1083.0
-color = Color(0, 0, 0, 1)
-
-[node name="LinkButton" type="LinkButton" parent="."]
-offset_left = 352.0
-offset_top = 411.0
-offset_right = 1570.0
-offset_bottom = 713.0
-theme_override_colors/font_color = Color(1, 0, 0, 1)
-theme_override_font_sizes/font_size = 111
-text = "Feedback (CLICK HERE)"
-uri = "https://docs.google.com/forms/d/e/1FAIpQLSc9MqmT13cSnErOUCHvHWrQHrN7lWQ52_TKgou81tuR_jHADA/viewform"
-
-[node name="Back" type="Button" parent="."]
-offset_left = 49.0
-offset_top = 850.0
-offset_right = 403.0
-offset_bottom = 1060.0
-theme_override_colors/font_color = Color(1, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_p8k7r")
-theme_override_font_sizes/font_size = 151
-text = "BACK"
-
-[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+version https://git-lfs.github.com/spec/v1
+oid sha256:a346cef440a374bebaa5dd625632eed0912682a62316c0ebcc260b5a0cf55e3e
+size 1171

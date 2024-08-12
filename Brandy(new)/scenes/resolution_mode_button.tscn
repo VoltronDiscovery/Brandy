@@ -1,13 +1,3 @@
-[gd_scene load_steps=3 format=3 uid="uid://b40f5gpyxsrsj"]
-
-[ext_resource type="PackedScene" uid="uid://06pstlahhbep" path="res://scenes/option.tscn" id="1_07tvm"]
-[ext_resource type="Script" path="res://scripts/resolution_mode_button.gd" id="2_3syr6"]
-
-[node name="Resolution_Mode_Button" instance=ExtResource("1_07tvm")]
-script = ExtResource("2_3syr6")
-
-[node name="OptionButton" parent="HBoxContainer" index="2"]
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-item_count = 0
-
-[connection signal="item_selected" from="HBoxContainer/OptionButton" to="." method="_on_option_button_item_selected"]
+version https://git-lfs.github.com/spec/v1
+oid sha256:789a46221147cd801a25143ae5482dd50a28e0cae6447623db8216302baf45f1
+size 603

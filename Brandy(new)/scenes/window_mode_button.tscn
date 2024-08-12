@@ -1,14 +1,3 @@
-[gd_scene load_steps=3 format=3 uid="uid://dfjtxk1m5jy0w"]
-
-[ext_resource type="PackedScene" uid="uid://06pstlahhbep" path="res://scenes/option.tscn" id="1_i0182"]
-[ext_resource type="Script" path="res://scripts/window_mode_button.gd" id="2_7y185"]
-
-[node name="Window_Mode_button" instance=ExtResource("1_i0182")]
-script = ExtResource("2_7y185")
-
-[node name="Label" parent="HBoxContainer" index="0"]
-text = "WINDOW MODE "
-
-[node name="OptionButton" parent="HBoxContainer" index="2"]
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-item_count = 0
+version https://git-lfs.github.com/spec/v1
+oid sha256:d8f069653699ef167f9b9228d0e06796cc41ec1b4d82f3cad4fe9d8a15162488
+size 552
