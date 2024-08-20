@@ -9,7 +9,6 @@ func _ready():
 func _process(delta):
 	if is_colliding():
 		var hit = get_collider()
-		print(hit.has_method("interacts"))
 		if hit.has_method("interacts"):
 			int_text.visible = true
 			if Input.is_action_just_pressed("interacts"):

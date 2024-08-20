@@ -1,7 +1,7 @@
 extends Node3D
 
-@export var red_card: Node3D
-@export var locked: bool
+#@export var card: Node3D
+#@export var locked: bool
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
