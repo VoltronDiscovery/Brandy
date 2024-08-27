@@ -13,6 +13,7 @@ func _process(delta):
 			int_text.visible = true
 			if Input.is_action_just_pressed("interacts"):
 				hit.interacts()
+				print("interact")
 		else:
 			int_text.visible = false
 	else:

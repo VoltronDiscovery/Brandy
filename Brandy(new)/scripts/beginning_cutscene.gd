@@ -9,4 +9,8 @@ func _ready():
 	get_node("/root/" + get_tree().current_scene.name + "/player").movable = true
 	get_node("/root/" + get_tree().current_scene.name + "/player/neck/Camera3D").current = true
 	#$cutscene.current = false
-	#queue_free()
+	queue_free()
+	
+
+
+
