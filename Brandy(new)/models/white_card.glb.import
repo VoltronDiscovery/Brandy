@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://hoe60ql6nanp"
-path="res://.godot/imported/monster 2.glb-fe835d533b01b04a3584a711c64b6d75.scn"
+uid="uid://c2sjc3jlrd2bw"
+path="res://.godot/imported/white_card.glb-bdb12e323ba58ed472449a3dea498817.scn"
 
 [deps]
 
-source_file="res://monster 2.glb"
-dest_files=["res://.godot/imported/monster 2.glb-fe835d533b01b04a3584a711c64b6d75.scn"]
+source_file="res://models/white_card.glb"
+dest_files=["res://.godot/imported/white_card.glb-bdb12e323ba58ed472449a3dea498817.scn"]
 
 [params]
 

@@ -27,17 +27,20 @@ func _physics_process(delta):
 		var next_location = $NavigationAgent3D.get_next_path_position()
 		var new_velocity = (next_location - current_location).normalized() * SPEED
 		$NavigationAgent3D.set_velocity(new_velocity)
+		#var look_dir = atan2(-velocity.x, -velocity.z)
+		#rotation.y = look_dir
 		var look_dir = atan2(-velocity.x, -velocity.z)
-		rotation.y = look_dir
+		rotation.y = lerp(rotation.y, look_dir, 0.2)
 		distance = player.global_transform.origin.distance_to(global_transform.origin)
+		move_and_slide()
+		
 		if distance <= 2 && caught == false:
 			player.visible = false 
 			caught = true 
 			$cutscene3.play("jumpscare")
 			$jumpscare.current = true
 			await get_tree().create_timer(7.0, false).timeout
-			get_tree().change_scene_to_file("res://scenes/" + scene_name + ".tscn")
-		move_and_slide()
+			get_tree().change_scene_to_file("res://scenes/gameover_screen.tscn")
 
 func update_target_location(target_location):
 	$NavigationAgent3D.target_position = target_location
