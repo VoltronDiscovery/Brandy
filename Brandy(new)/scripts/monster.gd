@@ -7,7 +7,7 @@ var player
 var caught = false 
 var distance: float
 @export var scene_name: String
-@onready var nav_agent = $NavigationAgent3D 
+@onready var nav_agent = $NavigationAgent3D
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -35,7 +35,7 @@ func _physics_process(delta):
 			caught = true 
 			$cutscene3.play("jumpscare")
 			$jumpscare.current = true
-			await get_tree().create_timer(10.0, false).timeout
+			await get_tree().create_timer(7.0, false).timeout
 			get_tree().change_scene_to_file("res://scenes/" + scene_name + ".tscn")
 		move_and_slide()
 
@@ -47,6 +47,9 @@ func on_navigation_agent_3d_velocity_computed(safe_velocity):
 	velocity = velocity.move_toward(safe_velocity, 0.25)
 	move_and_slide()
 
-
 func _on_monster_spawn_timer_timeout():
 	set_physics_process(true)
+
+func _on_jumpscare_finished(jumpscare):
+	if jumpscare == "jumpscare":
+		get_tree().change_scene_to_file("res://scenes/gameover_screen.tscn")
