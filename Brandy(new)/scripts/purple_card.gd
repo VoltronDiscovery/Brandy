@@ -4,5 +4,5 @@ extends StaticBody3D
 
 # Called when the node enters the scene tree for the first time.
 func interacts():
-	door.locked = false
+	door.opened = false
 	queue_free()

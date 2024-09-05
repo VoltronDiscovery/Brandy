@@ -1,7 +1,7 @@
 extends Control
 
 var target_scene = "res://scenes/gameover_scene.tscn"
-var countdown_duration = 240.0
+var countdown_duration = 360.0
 var countdown_started = true
 
 @onready var timer = $Timer

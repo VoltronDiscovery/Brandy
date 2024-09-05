@@ -11,17 +11,10 @@ var opened = false
 func interacts():
 	if locked:
 		$locked.play()
-		#if red_card != null:
-			#locked = false
-			#interactable = true 
+		$AnimationPlayer.play("locked")
 	elif interactable and not locked:
 		interactable = false
 		opened = not opened
-		#if locked and red_card == null:
-			#locked = false
-	#elif interactable && !locked:
-		#interactable = false
-		#opened = !opened
 		if opened:
 			$close.play()
 			$AnimationPlayer.play("dooropen")

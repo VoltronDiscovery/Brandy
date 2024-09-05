@@ -9,6 +9,7 @@ var opened = false
 func interacts():
 	if locked:
 		$locked.play()
+		$AnimationPlayer.play("locked")
 	elif interactable and not locked:
 		interactable = false
 		opened = not opened
