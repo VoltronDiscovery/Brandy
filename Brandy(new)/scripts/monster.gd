@@ -38,6 +38,7 @@ func _physics_process(delta):
 			player.visible = false 
 			caught = true 
 			$cutscene3.play("jumpscare")
+			$jumpscare1.play()
 			$jumpscare.current = true
 			await get_tree().create_timer(7.0, false).timeout
 			get_tree().change_scene_to_file("res://scenes/gameover_screen.tscn")

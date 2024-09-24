@@ -2,21 +2,18 @@ extends Control
 
 var target_scene = "res://scenes/gameover_scene.tscn"
 var countdown_duration = 360.0
-var countdown_started = true
+var countdown_started = false
 
 @onready var timer = $Timer
 @onready var timer_label = $Label
 @onready var spawn_timer = $SpawnTimer
 @onready var timer_label2 = $Label2
 @onready var hide_label_timer = $HideLabelTimer
+@onready var cutscene_timer = $CutsceneTimer
 
 # Timer starts
 func _ready():
-	var timer = $Timer
-	var timer_label = $Label
-	timer.start()
-	spawn_timer.start(29)
-
+	cutscene_timer.start(14)
 	
 # When countdown goes to 0, player will be teleported to the gameover scene
 func _on_timer_timeout():
@@ -33,3 +30,11 @@ func _on_spawn_timer_timeout():
 
 func _on_hide_label_timer_timeout():
 	timer_label2.visible = false
+
+
+func _on_cutscene_timer_timeout():
+	var timer = $Timer
+	var timer_label = $Label
+	var countdown_started = true
+	timer.start()
+	spawn_timer.start(29)
