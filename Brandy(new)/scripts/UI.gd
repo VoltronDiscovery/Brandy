@@ -40,4 +40,4 @@ func _on_cutscene_timer_timeout():
 	var timer_label = $Label
 	countdown_started = true
 	timer.start()
-	spawn_timer.start(29)
+	spawn_timer.start(15)
