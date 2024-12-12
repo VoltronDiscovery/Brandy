@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://sua1wvpdg7il"
+path="res://.godot/imported/Roblox airplane scary music airplane and airplane 2 [ ezmp3.cc ].ogg-8024c690696a64a7b832e828d07138e3.oggvorbisstr"
+
+[deps]
+
+source_file="res://music/Roblox airplane scary music airplane and airplane 2 [ ezmp3.cc ].ogg"
+dest_files=["res://.godot/imported/Roblox airplane scary music airplane and airplane 2 [ ezmp3.cc ].ogg-8024c690696a64a7b832e828d07138e3.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

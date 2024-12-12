@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bccy4xt8ekuuh"
+path="res://.godot/imported/trying-to-open-a-locked-door-104302 2.ogg-049bad9edc3d663cecef9f1117043c21.oggvorbisstr"
+
+[deps]
+
+source_file="res://music/trying-to-open-a-locked-door-104302 2.ogg"
+dest_files=["res://.godot/imported/trying-to-open-a-locked-door-104302 2.ogg-049bad9edc3d663cecef9f1117043c21.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

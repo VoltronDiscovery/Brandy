@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c7memcedo3u61"
+path="res://.godot/imported/spooky-ambience-212885 2.wav-c1905b45104db056bf3f5dd1f230cddb.sample"
+
+[deps]
+
+source_file="res://music/spooky-ambience-212885 2.wav"
+dest_files=["res://.godot/imported/spooky-ambience-212885 2.wav-c1905b45104db056bf3f5dd1f230cddb.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
